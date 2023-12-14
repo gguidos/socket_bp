@@ -1,0 +1,15 @@
+{
+  "paths": {
+    "logs": "./logs"
+  },
+  "db": {
+    "dbUri": "mongodb://localhost/",
+    "dbName": "db_boilerplate",
+    "dbColl": "coll_boilerplate"
+  },
+  "cache": {
+    "host": "localhost",
+    "port": 6379,
+    "ttl": 900
+  }
+}

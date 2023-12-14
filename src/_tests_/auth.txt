@@ -1,0 +1,9 @@
+POST http://localhost:3000/api/v1/user/registration
+content-type: application/json
+api-key: lalala
+
+{
+    "username": "guidog",
+    "password": "asdf",
+    "email": "guidog@example.com"
+}

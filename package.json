@@ -1,0 +1,36 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --exit --reporter json -r ts-node/register src/**/*.spec.ts",
+    "build": "tsc",
+    "start": "npm install && npm run serve",
+    "serve": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^3.1.0",
+    "compression": "^1.7.4",
+    "convict": "^6.2.4",
+    "convict-format-with-validator": "^6.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "helmet": "^7.1.0",
+    "mongodb": "^6.3.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1",
+    "redis": "^4.6.11",
+    "reflect-metadata": "^0.1.14",
+    "require-dir": "^1.2.0",
+    "sanitize": "^2.1.2",
+    "sanitize-html": "^2.11.0",
+    "socket.io": "^4.7.2",
+    "swagger-ui-express": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "winston": "^3.11.0"
+  }
+}
