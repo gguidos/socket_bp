@@ -10,6 +10,6 @@
   "cache": {
     "host": "localhost",
     "port": 6379,
-    "ttl": 900
+    "ttl": 15
   }
 }

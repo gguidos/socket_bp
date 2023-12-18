@@ -19,6 +19,7 @@ export default function createPost({
         let user;
         const dbConfig = config.get('db');
         const cacheConfig = config.get('cache');
+        
         logger.info('[POST][USE-CASE] Inserting object process - START!');
         const userFactory = makeInputObj({ params });
 
@@ -34,10 +35,10 @@ export default function createPost({
         if (checkDuplicate.length) throw new ExistingUserError();
         
         const cacheKey = cacheConfig.prefix + ':' + user.usernameEmailHash;
-        const checkIfTempDuplicate = await getCache({ cacheKey , cacheConfig })
+        const checkIfTempDuplicate = await getCache({ cacheKey ,cacheConfig })
         if (checkIfTempDuplicate) throw new ExistingUserError();
 
-        await setCache({ data: user, cacheKey })
+        await setCache({ data: user, cacheKey, cacheConfig })
 
         resolve(user.usernameEmailHash);
       } catch (err) {

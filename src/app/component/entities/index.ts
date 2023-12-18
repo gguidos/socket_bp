@@ -1,7 +1,7 @@
 import MissingParameterError from '../../../errors/missing-parameter-error';
 import InvalidEmailError from '../../../errors/invalid-email-error';
-import makeInputObjFactory from './make-input-object';
-import makeOutputObjFactory from './make-output-object';
+import makeInputObjFactory from './make-temp-user-object';
+import makeOutputObjFactory from './make-output-user-object';
 import * as crypto from 'crypto';
 import * as sanitize from 'sanitize-html';
 

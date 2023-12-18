@@ -9,12 +9,21 @@ import {
   getCache
 } from '../data-access';
 import makeRegistration from './registration';
+import makeGetUser from './get-user';
 
 import logger from '../../libs/logger'
 
+const getUser = ({ params }) => {
+  return new Promise((resolve, reject) => {
+    makeGetUser({ ServerError, config })
+    .getUser({ params})
+    .then(user => resolve(user))
+    .catch(err => reject(err));
+  })
+}
+
 const registration = ({ params }) => {
   return new Promise((resolve, reject) => {
-
     makeRegistration({
       makeInputObj,
       findDocuments,
@@ -24,17 +33,14 @@ const registration = ({ params }) => {
       ExistingUserError,
       config,
       logger
-    }).registration({
-      params
-    }).then(res => {
-      resolve(res)
-    }).catch(error => {
-      reject(error)
-    });
-    
+    })
+    .registration({ params })
+    .then(res => resolve(res))
+    .catch(error => reject(error));
   })
 }
 
 export {
-  registration
+  registration,
+  getUser
 }

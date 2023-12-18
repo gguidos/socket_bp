@@ -7,13 +7,10 @@ export default function makeRedisClient({ Redis, logger }) {
   async function setCache({ data, cacheKey, cacheConfig }){
     try {
       const redisClient = await createClient({ cacheConfig })
-
       const inputData = JSON.stringify(data);
       await redisClient.set(cacheKey, inputData);
       redisClient.expire(cacheKey, cacheConfig.ttl);
-
       redisClient.quit();
-      
       return;
     } catch (err) {
       logger.error(err);

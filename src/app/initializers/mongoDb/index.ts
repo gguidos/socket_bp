@@ -16,7 +16,6 @@ class mongoDBClient {
 	}
 
 	async connect() {
-		console.log(this.dbUri)
 		this.connection = await MongoClient.connect(this.dbUri);
 		this.db = this.connection.db(this.dbName);
 		logger.info('[MONGODB] Connection successfull.');

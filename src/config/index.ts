@@ -80,7 +80,7 @@ const config = convict({
     },
     ttl: {
       format: Number,
-      default: 31556952
+      default: 15
     },
     prefix: {
       format: 'String',
